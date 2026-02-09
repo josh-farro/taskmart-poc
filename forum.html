@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forum · TaskMart PoC</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div id="tmHeader"></div>
+  <main class="container">
+    
+<div class="grid cols-2">
+  <div class="card">
+    <h1>Forum</h1>
+    <p class="small">Threads and posts are stored per-browser. In Training Mode, post bodies use intentionally unsafe rendering sinks.</p>
+    <div class="hr"></div>
+    <h3>Threads</h3>
+    <div id="threads" class="row"></div>
+    <div class="hr"></div>
+    <h3>Create Thread</h3>
+    <form id="threadForm">
+      <div class="grid">
+        <div>
+          <div class="small">Title</div>
+          <input id="threadTitle" class="input" placeholder="Topic title" />
+        </div>
+        <div>
+          <div class="small">Body</div>
+          <textarea id="threadBody" class="textarea" placeholder="First post (stored to localStorage)"></textarea>
+        </div>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <button class="btn secondary" type="submit">Create</button>
+        <span id="threadMsg" class="small"></span>
+      </div>
+    </form>
+  </div>
+  <div id="threadView"></div>
+</div>
+
+  </main>
+  <div id="tmFooter"></div>
+  <script src="assets/js/app.js" defer></script>
+<script src="assets/js/forum.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      TM.mountHeader();
+      TM.mountFooter();
+    });
+  </script>
+</body>
+</html>

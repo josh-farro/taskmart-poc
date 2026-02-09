@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cart · TaskMart PoC</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div id="tmHeader"></div>
+  <main class="container">
+    
+<div class="card">
+  <div class="row" style="justify-content:space-between">
+    <h1 style="margin:0">Cart</h1>
+    <a class="btn ghost" href="shop.html">Continue Shopping</a>
+  </div>
+  <div class="hr"></div>
+  <div class="grid cols-2">
+    <div>
+      <div id="cartTable"></div>
+    </div>
+    <div>
+      <div class="card" style="padding:14px">
+        <h3 style="margin:0 0 10px 0">Coupon</h3>
+        <form id="couponForm">
+          <input id="coupon" class="input" placeholder="WELCOME10" />
+          <div class="row" style="margin-top:10px">
+            <button class="btn" type="submit">Apply</button>
+            <span id="couponMsg" class="small"></span>
+          </div>
+        </form>
+        <div class="hr"></div>
+        <div id="cartTotals"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </main>
+  <div id="tmFooter"></div>
+  <script src="assets/js/app.js" defer></script>
+<script src="assets/js/cart.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      TM.mountHeader();
+      TM.mountFooter();
+    });
+  </script>
+</body>
+</html>

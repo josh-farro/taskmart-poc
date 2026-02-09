@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teacher · TaskMart PoC</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div id="tmHeader"></div>
+  <main class="container">
+    
+<div class="grid cols-2">
+  <div class="card">
+    <h1>Teacher Controls</h1>
+    <p class="small">Use this page to toggle Training Mode and reset the lab per-browser (localStorage).</p>
+    <div class="hr"></div>
+
+    <div class="row" style="justify-content:space-between">
+      <div>
+        <div class="small">Training Mode</div>
+        <div id="trainingState" class="badge">...</div>
+      </div>
+      <label class="badge" style="cursor:pointer">
+        <input id="trainingToggle" type="checkbox" style="transform:scale(1.2); margin-right:10px" />
+        Toggle
+      </label>
+    </div>
+
+    <div class="hr"></div>
+    <div class="notice">
+      When Training Mode is ON, selected components render user-controlled strings using innerHTML for XSS simulation.
+      When OFF, the same components render using safe textContent output encoding.
+    </div>
+
+    <div class="hr"></div>
+    <div class="row">
+      <button class="btn danger" id="resetAllBtn" type="button">Reset Data (Preserve Training Mode)</button>
+      <button class="btn" id="resetHardBtn" type="button">Hard Reset (Also Clear Training Mode)</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Classroom Notes</h2>
+    <div class="grid">
+      <div class="badge warn">Do not enable Training Mode on public hosting.</div>
+      <div class="badge">Reset is per-browser profile (localStorage).</div>
+      <div class="badge">DevTools access cannot be prevented (rule-based only).</div>
+      <div class="badge">No exploit strings are provided by the site.</div>
+    </div>
+    <div class="hr"></div>
+    <h3>Quick Start</h3>
+    <pre class="card" style="margin:0; padding:14px; background:rgba(7,10,20,.35); border-radius:14px; overflow:auto">
+python -m http.server 8080
+open http://127.0.0.1:8080/index.html
+    </pre>
+  </div>
+</div>
+
+  </main>
+  <div id="tmFooter"></div>
+  <script src="assets/js/app.js" defer></script>
+<script src="assets/js/teacher.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      TM.mountHeader();
+      TM.mountFooter();
+    });
+  </script>
+</body>
+</html>

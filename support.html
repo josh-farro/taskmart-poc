@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support · TaskMart PoC</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div id="tmHeader"></div>
+  <main class="container">
+    
+<div class="grid cols-2">
+  <div class="card">
+    <h1>Support</h1>
+    <p class="small">Tickets are stored per-browser in localStorage.</p>
+    <form id="ticketForm">
+      <div class="grid">
+        <div>
+          <div class="small">Subject</div>
+          <input id="subject" class="input" placeholder="Order issue" />
+        </div>
+        <div>
+          <div class="small">Message</div>
+          <textarea id="message" class="textarea" placeholder="Describe the issue"></textarea>
+        </div>
+      </div>
+      <div class="row" style="margin-top:12px">
+        <button class="btn" type="submit">Create Ticket</button>
+        <span id="ticketMsg" class="small"></span>
+      </div>
+    </form>
+    <div class="hr"></div>
+    <div class="notice">Teaching note: no server-side validation exists. Everything here is client-controlled.</div>
+  </div>
+  <div class="card">
+    <h2>Your Tickets</h2>
+    <div id="ticketList"></div>
+  </div>
+</div>
+
+  </main>
+  <div id="tmFooter"></div>
+  <script src="assets/js/app.js" defer></script>
+<script src="assets/js/support.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      TM.mountHeader();
+      TM.mountFooter();
+    });
+  </script>
+</body>
+</html>

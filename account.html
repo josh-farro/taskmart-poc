@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Account · TaskMart PoC</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div id="tmHeader"></div>
+  <main class="container">
+    
+<div class="card">
+  <div class="row" style="justify-content:space-between">
+    <div>
+      <h1 style="margin:0">Account</h1>
+      <div class="small">User: <span id="acctUser" class="mono"></span> · Role: <span id="acctRole" class="mono"></span></div>
+    </div>
+    <div class="row">
+      <a class="btn ghost" href="cart.html">Cart</a>
+      <a class="btn" href="shop.html">Shop</a>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <h2>Orders</h2>
+  <div id="orders"></div>
+</div>
+
+  </main>
+  <div id="tmFooter"></div>
+  <script src="assets/js/app.js" defer></script>
+<script src="assets/js/account.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      TM.mountHeader();
+      TM.mountFooter();
+    });
+  </script>
+</body>
+</html>

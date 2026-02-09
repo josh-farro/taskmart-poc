@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home · TaskMart PoC</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div id="tmHeader"></div>
+  <main class="container">
+    
+<div class="hero">
+  <div class="card">
+    <h1>TaskMart PoC Training Lab</h1>
+    <p>Static ecommerce-style site for authorized classroom demos. No backend. Data is simulated via browser localStorage. Training Mode toggles intentionally unsafe DOM rendering sinks.</p>
+    <div class="grid cols-3">
+      <div class="kpi"><div class="label">Mode</div><div class="value" id="mode">...</div></div>
+      <div class="kpi"><div class="label">Session</div><div class="value mono" id="whoami">...</div></div>
+      <div class="kpi"><div class="label">Reset</div><div class="value">Per-browser</div></div>
+    </div>
+    <div class="hr"></div>
+    <div class="row">
+      <a class="btn" href="shop.html">Start Shopping</a>
+      <a class="btn secondary" href="login.html">Login</a>
+      <a class="btn ghost" href="teacher.html">Teacher Controls</a>
+    </div>
+    <div class="hr"></div>
+    <div class="notice">
+      Ethics and safety: This is a simulation, not a production system. Use only in authorized educational contexts. Do not reuse credentials. Training Mode should not be enabled on public deployments.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Lab Topics</h2>
+    <div class="grid">
+      <div class="badge warn">Reflected XSS (Search echo)</div>
+      <div class="badge warn">Stored XSS (Forum + Reviews)</div>
+      <div class="badge">Client-side Authorization (Admin gating)</div>
+      <div class="badge">Business Logic (Cart, coupons, totals)</div>
+      <div class="badge">Information Disclosure (Admin debug panel)</div>
+    </div>
+    <div class="hr"></div>
+    <p class="small">Safe Mode is the default. Training Mode intentionally disables output encoding in selected components to demonstrate why unsafe DOM sinks are dangerous.</p>
+  </div>
+</div>
+
+  </main>
+  <div id="tmFooter"></div>
+  <script src="assets/js/app.js" defer></script>
+<script src="assets/js/index.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      TM.mountHeader();
+      TM.mountFooter();
+    });
+  </script>
+</body>
+</html>

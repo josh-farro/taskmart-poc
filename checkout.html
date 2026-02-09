@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout · TaskMart PoC</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div id="tmHeader"></div>
+  <main class="container">
+    
+<div class="grid cols-2">
+  <div class="card">
+    <h1>Checkout</h1>
+    <p class="small">This is a static simulation. Orders are stored in localStorage.</p>
+    <div id="summary"></div>
+  </div>
+  <div class="card">
+    <h2>Shipping</h2>
+    <form id="checkoutForm">
+      <div class="grid">
+        <div>
+          <div class="small">Full name</div>
+          <input id="fullName" class="input" placeholder="Student Name" />
+        </div>
+        <div>
+          <div class="small">Address</div>
+          <input id="address" class="input" placeholder="Room / Building / Street" />
+        </div>
+        <div>
+          <div class="small">Notes</div>
+          <textarea id="notes" class="textarea" placeholder="Optional notes"></textarea>
+        </div>
+      </div>
+      <div class="row" style="margin-top:12px">
+        <button class="btn secondary" type="submit">Place Order</button>
+        <span id="checkoutMsg" class="small"></span>
+      </div>
+    </form>
+    <div class="hr"></div>
+    <div class="notice">Teaching note: totals are recomputed client-side at checkout. Students can inspect and tamper with values.</div>
+  </div>
+</div>
+
+  </main>
+  <div id="tmFooter"></div>
+  <script src="assets/js/app.js" defer></script>
+<script src="assets/js/checkout.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      TM.mountHeader();
+      TM.mountFooter();
+    });
+  </script>
+</body>
+</html>

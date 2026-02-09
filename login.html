@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login · TaskMart PoC</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div id="tmHeader"></div>
+  <main class="container">
+    
+<div class="grid cols-2">
+  <div class="card">
+    <h1>Login (Simulation)</h1>
+    <p>Credentials are hardcoded in client-side JavaScript for classroom use.</p>
+    <form id="loginForm">
+      <div class="grid">
+        <div>
+          <div class="small">Username</div>
+          <input id="username" class="input" placeholder="student01" autocomplete="off" />
+        </div>
+        <div>
+          <div class="small">Password</div>
+          <input id="password" class="input" type="password" placeholder="student01" />
+        </div>
+      </div>
+      <div class="row" style="margin-top:12px">
+        <button class="btn" type="submit">Login</button>
+        <span id="loginMsg" class="small"></span>
+      </div>
+    </form>
+    <div class="hr"></div>
+    <div class="notice">
+      Teaching note: client-side authentication is not real security. Students can inspect/modify local state.
+    </div>
+  </div>
+  <div class="card">
+    <h2>Available Accounts</h2>
+    <p class="small">List is provided for convenience. Use only in authorized labs.</p>
+    <pre id="accountList" class="card" style="margin:0; padding:14px; background:rgba(7,10,20,.35); border-radius:14px; overflow:auto"></pre>
+  </div>
+</div>
+
+  </main>
+  <div id="tmFooter"></div>
+  <script src="assets/js/app.js" defer></script>
+<script src="assets/js/login.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      TM.mountHeader();
+      TM.mountFooter();
+    });
+  </script>
+</body>
+</html>
